@@ -13,13 +13,7 @@ export default function Faux(){
     const [fauxButtonState, setFauxButtonState] = useState(false);
 
     const toggleOption = (e)=>{
-        if (fauxButtonState === false){
-            setActiveOption(e.target.id);
-            setFauxButtonState(true);
-        } else {
-            setActiveOption("");
-            setFauxButtonState(false);
-        }   
+        setActiveOption(e.target.id);
     }
 
     let fauxGrid = createFauxGrid(gridSize, activeOption);
@@ -30,7 +24,8 @@ export default function Faux(){
                 <Col className="faux-col" key="col-1">asdasdf</Col>
                 <Col className="game-col">{fauxGrid}</Col>
                 <Col className="faux-col option-select" key="col-3">
-                    <FauxButton click={toggleOption} optionStr={"Block"} state={fauxButtonState}/>
+                    <FauxButton click={toggleOption} optionStr={"Block"}/>
+                    <FauxButton click={toggleOption} optionStr={"Block2"} />
                 </Col>
             </Row>
 
