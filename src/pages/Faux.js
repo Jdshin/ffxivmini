@@ -24,8 +24,12 @@ export default function Faux(){
                 <Col className="faux-col" key="col-1">asdasdf</Col>
                 <Col className="game-col">{fauxGrid}</Col>
                 <Col className="faux-col option-select" key="col-3">
-                    <FauxButton click={toggleOption} optionStr={"Block"}/>
-                    <FauxButton click={toggleOption} optionStr={"Block2"} />
+                    <FauxButton click={toggleOption} optionStr={"Block"} optionClass={"block"}/>
+                    <FauxButton click={toggleOption} optionStr={"Hidden"} optionClass={"hide"}/>
+                    <FauxButton click={toggleOption} optionStr={"Chest"} optionClass={"chest"}/>
+                    <FauxButton click={toggleOption} optionStr={"Sword"} optionClass={"sword"}/>
+                    <FauxButton click={toggleOption} optionStr={"Empty"} optionClass={"empty"}/>
+                    <FauxButton click={toggleOption} optionStr={"Fox"} optionClass={"fox"}/>
                 </Col>
             </Row>
 

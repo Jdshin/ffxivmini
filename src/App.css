@@ -37,10 +37,10 @@
   }
 }
 
-.Block {
-  background-color: blue;
+.block {
+  background-color: grey;
 }
 
-.Block2 {
+.hide {
   background-color: red;
 }
