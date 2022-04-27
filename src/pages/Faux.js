@@ -1,5 +1,6 @@
 import {Container, Row, Col} from 'react-bootstrap';
 import FauxSquare from '../components/FauxSquare';
+import FauxButton from '../components/FauxButton';
 
 export default function Faux(){
 
@@ -25,12 +26,18 @@ export default function Faux(){
 
     let fauxGrid = createFauxGrid();
 
+    const handleClick = (e)=>{
+        console.log("Clicked!");
+    }
+
     return (
         <Container className="faux-container">
             <Row className="faux-row-container">
                 <Col className="faux-col" key="col-1">asdasdf</Col>
                 <Col key="col-2">{fauxGrid}</Col>
-                <Col className="faux-col" key="col-3">asdfasdf</Col>
+                <Col className="faux-col option-select" key="col-3">
+                    <FauxButton click={handleClick} option={"Blccked"}>Hello</FauxButton>
+                </Col>
             </Row>
         </Container>
     )
