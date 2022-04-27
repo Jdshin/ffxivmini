@@ -12,7 +12,9 @@ export default function Faux(){
             let rowArr = [];
             for (let j = 0; j < gridSize; j++){
                 rowArr.push(
-                    <FauxSquare id={'r'+i+'c'+j} key={'r'+i+'c'+j}/>
+                    <Col key={'r'+i+'c'+j}>
+                        <FauxSquare id={'r'+i+'c'+j} />
+                    </Col>
                 )
             }
             fauxGrid.push(
@@ -32,13 +34,14 @@ export default function Faux(){
 
     return (
         <Container className="faux-container">
-            <Row className="faux-row-container">
+            <Row>
                 <Col className="faux-col" key="col-1">asdasdf</Col>
-                <Col key="col-2">{fauxGrid}</Col>
+                <Col className="game-col">{fauxGrid}</Col>
                 <Col className="faux-col option-select" key="col-3">
                     <FauxButton click={handleClick} option={"Blccked"}>Hello</FauxButton>
                 </Col>
             </Row>
+
         </Container>
     )
 }

@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import Faux from './pages/Faux';
 import MiniCact from './pages/MiniCact';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/faux.css';
 
 function App() {
 
