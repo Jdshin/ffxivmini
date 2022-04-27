@@ -1,36 +1,28 @@
 import {Container, Row, Col} from 'react-bootstrap';
 import FauxSquare from '../components/FauxSquare';
 import FauxButton from '../components/FauxButton';
+import createFauxGrid from '../utils/createFauxGrid';
+import { useState } from 'react';
 
 export default function Faux(){
 
     let gridSize = 6;
 
-    const createFauxGrid = () => {
-        let fauxGrid = [];
-        for (let i = 0; i < gridSize; i++){
-            let rowArr = [];
-            for (let j = 0; j < gridSize; j++){
-                rowArr.push(
-                    <Col key={'r'+i+'c'+j}>
-                        <FauxSquare id={'r'+i+'c'+j} />
-                    </Col>
-                )
-            }
-            fauxGrid.push(
-                <Row className="faux-row" key={'row-'+i}>
-                    {rowArr}
-                </Row>
-            );
-        }
-        return fauxGrid;
+
+    const [activeOption, setActiveOption] = useState("");
+    const [fauxButtonState, setFauxButtonState] = useState(false);
+
+    const toggleOption = (e)=>{
+        if (fauxButtonState === false){
+            setActiveOption(e.target.id);
+            setFauxButtonState(true);
+        } else {
+            setActiveOption("");
+            setFauxButtonState(false);
+        }   
     }
 
-    let fauxGrid = createFauxGrid();
-
-    const handleClick = (e)=>{
-        console.log("Clicked!");
-    }
+    let fauxGrid = createFauxGrid(gridSize, activeOption);
 
     return (
         <Container className="faux-container">
@@ -38,7 +30,7 @@ export default function Faux(){
                 <Col className="faux-col" key="col-1">asdasdf</Col>
                 <Col className="game-col">{fauxGrid}</Col>
                 <Col className="faux-col option-select" key="col-3">
-                    <FauxButton click={handleClick} option={"Blccked"}>Hello</FauxButton>
+                    <FauxButton click={toggleOption} optionStr={"Block"} state={fauxButtonState}/>
                 </Col>
             </Row>
 
