@@ -5,8 +5,7 @@ export default function Faux(){
 
     let gridSize = 6;
 
-    const createFauxRow = () => {
-        // For every row
+    const createFauxGrid = () => {
         let fauxGrid = [];
         for (let i = 0; i < gridSize; i++){
             let rowArr = [];
@@ -16,7 +15,7 @@ export default function Faux(){
                 )
             }
             fauxGrid.push(
-                <Row className="faux-row">
+                <Row className="faux-row" key={'row-'+i}>
                     {rowArr}
                 </Row>
             );
@@ -24,11 +23,15 @@ export default function Faux(){
         return fauxGrid;
     }
 
-    let fauxGrid = createFauxRow();
+    let fauxGrid = createFauxGrid();
 
     return (
         <Container className="faux-container">
-            {fauxGrid}
+            <Row className="faux-row-container">
+                <Col className="faux-col" key="col-1">asdasdf</Col>
+                <Col key="col-2">{fauxGrid}</Col>
+                <Col className="faux-col" key="col-3">asdfasdf</Col>
+            </Row>
         </Container>
     )
 }

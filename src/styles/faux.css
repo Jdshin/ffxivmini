@@ -6,9 +6,22 @@
     margin: 5vh;
 }
 
+.faux-row-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .faux-row {
     display: flex;
     flex-direction: row;
+}
+
+.faux-col {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 30vh;
 }
 
 .square {
